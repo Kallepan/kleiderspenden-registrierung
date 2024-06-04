@@ -1,0 +1,43 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const year = ref<Number>(new Date().getFullYear())
+</script>
+
+<template>
+  <footer>
+    <div class="content">
+      <p>&copy; {{ year }} Kleiderspenden Registrierung</p>
+      <small class="hint"
+        >Erstellt von Kajeepan Kandeepan. Hier stehen ein paar rechtliche Hinweise.</small
+      >
+    </div>
+  </footer>
+</template>
+
+<style scoped lang="less">
+footer {
+  color: var(--highlight-text-color);
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background-color: #0f0f0f;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hint {
+    color: #fff;
+    font-size: 0.6rem;
+  }
+}
+</style>
