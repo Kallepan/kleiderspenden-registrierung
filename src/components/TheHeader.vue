@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+
+const routes = [
+  { path: '/', name: 'Home' },
+  { path: '/formular', name: 'Jetzt spenden' }
+]
 </script>
 
 <template>
@@ -10,8 +15,9 @@ import { RouterLink } from 'vue-router'
         <div class="small-header">KSR</div>
       </RouterLink>
       <span class="spacer"></span>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
+      <RouterLink v-for="route in routes" :key="route.path" :to="route.path">{{
+        route.name
+      }}</RouterLink>
     </nav>
   </header>
 </template>
