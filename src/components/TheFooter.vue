@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const year = ref<Number>(new Date().getFullYear())
+const year = ref<Number>(new Date().getFullYear());
 </script>
 
 <template>
@@ -17,7 +17,6 @@ const year = ref<Number>(new Date().getFullYear())
 
 <style scoped lang="less">
 footer {
-  color: var(--highlight-text-color);
   width: 100%;
   margin-top: 1rem;
   font-size: 0.8rem;
