@@ -1,10 +1,24 @@
 @import './base.css';
-a {
+a,
+button {
   text-decoration: none;
   color: var(--vt-c-indigo);
+  border: 2px solid var(--vt-c-indigo);
+  border-radius: 8px;
+  transition: 0.4s;
+  padding: 0.125rem 0.5rem;
+  background-color: var(--color-background);
+}
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 }
 @media (hover: hover) {
-  a:hover {
-    background-color: hsla(207, 100%, 37%, 0.2);
+  a:hover,
+  button:hover {
+    background-color: rgb(94, 114, 218);
+    color: rgb(24, 24, 24);
+    border-color: rgb(24, 24, 24);
   }
 }
