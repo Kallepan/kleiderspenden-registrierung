@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router';
 
-const routes = [
-  { path: '/', name: 'Home' },
-  { path: '/formular', name: 'Jetzt spenden' }
-]
+const routes = [{ path: '/formular', name: 'Jetzt spenden' }];
 </script>
 
 <template>
