@@ -1,17 +1,10 @@
 @import './base.css';
-a,
-.green {
-  display: inline-block; /* Make the link behave like a button */
+a {
   text-decoration: none;
-  color: var(--highlight-text-color); /* Use the custom color */
-  transition: 0.4s;
-  padding: 3px;
-  border: 2px solid rgb(1, 145, 97); /* Add an outline */
-  border-radius: 8px; /* Optional: Add some roundness to the button */
+  color: var(--vt-c-indigo);
 }
-
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: hsla(207, 100%, 37%, 0.2);
   }
 }
