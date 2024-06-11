@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TheLogo from './TheLogo.vue';
 import { RouterLink } from 'vue-router';
 
 const routes = [{ path: '/formular', name: 'Jetzt spenden' }];
@@ -7,6 +8,7 @@ const routes = [{ path: '/formular', name: 'Jetzt spenden' }];
 <template>
   <header>
     <nav>
+      <TheLogo />
       <RouterLink class="title" to="/">
         <div class="large-header">Kleiderspenden Registrierung</div>
         <div class="small-header">KSR</div>
@@ -20,6 +22,22 @@ const routes = [{ path: '/formular', name: 'Jetzt spenden' }];
 </template>
 
 <style scoped lang="less">
+a {
+  text-decoration: none;
+  color: var(--vt-c-indigo);
+  border: 2px solid var(--vt-c-indigo);
+  border-radius: 8px;
+  transition: 0.4s;
+  padding: 0.125rem 0.5rem;
+  background-color: var(--color-background);
+}
+
+a:hover {
+  background-color: rgb(94, 114, 218);
+  color: rgb(24, 24, 24);
+  border-color: rgb(24, 24, 24);
+}
+
 header {
   background-color: #0f0f0f;
   color: white;

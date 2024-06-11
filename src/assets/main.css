@@ -1,5 +1,5 @@
 @import './base.css';
-a,
+
 button {
   text-decoration: none;
   color: var(--vt-c-indigo);
@@ -8,17 +8,13 @@ button {
   transition: 0.4s;
   padding: 0.125rem 0.5rem;
   background-color: var(--color-background);
-}
-button {
   cursor: pointer;
   padding: 0.5rem 1rem;
   font-size: 1rem;
 }
-@media (hover: hover) {
-  a:hover,
-  button:hover {
-    background-color: rgb(94, 114, 218);
-    color: rgb(24, 24, 24);
-    border-color: rgb(24, 24, 24);
-  }
+
+button:hover {
+  background-color: rgb(94, 114, 218);
+  color: rgb(24, 24, 24);
+  border-color: rgb(24, 24, 24);
 }

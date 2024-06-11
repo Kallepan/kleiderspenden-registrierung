@@ -9,13 +9,19 @@ const year = ref<Number>(new Date().getFullYear());
     <div class="content">
       <p>&copy; {{ year }} Kleiderspenden Registrierung</p>
       <small class="hint"
-        >Erstellt von Kajeepan Kandeepan. Hier stehen ein paar rechtliche Hinweise.</small
+        >Erstellt von Kajeepan Kandeepan. Hier stehen ein paar rechtliche Hinweise.
+        <a href="https://pixabay.com/vectors/animal-animals-bird-flying-2023924/" target="_blank"
+          >Logo</a
+        ></small
       >
     </div>
   </footer>
 </template>
 
 <style scoped lang="less">
+a {
+  text-decoration: none;
+}
 footer {
   width: 100%;
   margin-top: 1rem;
