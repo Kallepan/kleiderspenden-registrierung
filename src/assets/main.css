@@ -1,20 +1,26 @@
 @import './base.css';
 
-button {
+.custom-button {
   text-decoration: none;
   color: var(--vt-c-indigo);
   border: 2px solid var(--vt-c-indigo);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   transition: 0.4s;
   padding: 0.125rem 0.5rem;
   background-color: var(--color-background);
   cursor: pointer;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
 }
 
-button:hover {
+.custom-button:hover {
   background-color: rgb(94, 114, 218);
   color: rgb(24, 24, 24);
   border-color: rgb(24, 24, 24);
+}
+
+.custom-button:disabled {
+  background-color: var(--vt-c-black-mute);
+  color: var(--vt-c-black-soft);
+  border-color: var(--vt-c-black-soft);
+  cursor: not-allowed;
 }

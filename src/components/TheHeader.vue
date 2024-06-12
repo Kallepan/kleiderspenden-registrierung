@@ -26,7 +26,7 @@ a {
   text-decoration: none;
   color: var(--vt-c-indigo);
   border: 2px solid var(--vt-c-indigo);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   transition: 0.4s;
   padding: 0.125rem 0.5rem;
   background-color: var(--color-background);
@@ -54,7 +54,7 @@ nav {
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: bold;
   }
 }

@@ -25,12 +25,11 @@ a {
 footer {
   width: 100%;
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
 
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
-
   background-color: #0f0f0f;
 
   .content {
@@ -42,7 +41,7 @@ footer {
 
   .hint {
     color: #fff;
-    font-size: 0.6rem;
+    font-size: 0.75rem;
   }
 }
 </style>
