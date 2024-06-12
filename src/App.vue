@@ -1,26 +1,31 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import TheHeader from '@/components/TheHeader.vue'
-import TheFooter from '@/components/TheFooter.vue'
+import { RouterView } from 'vue-router';
+import TheHeader from '@/components/TheHeader.vue';
+import TheFooter from '@/components/TheFooter.vue';
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="content">
     <TheHeader />
-    <div class="content">
+    <div class="main">
       <RouterView />
     </div>
+    <TheFooter />
   </div>
-  <TheFooter />
 </template>
 
 <style scoped lang="less">
-.wrapper {
+.content {
   max-width: 1024px;
-  margin: 0 auto;
+  min-height: 100vh;
 
-  .content {
-    padding: 2rem;
+  margin: 0 auto;
+  background-color: var(--color-background);
+
+  .main {
+    margin: 1rem;
+    // This is to fix the footer overlapping the content
+    padding: 0 0 2rem 0;
   }
 }
 </style>
