@@ -1,8 +1,6 @@
 @import './base.css';
 
 button {
-  --vt-c-indigo: rgb(159, 168, 218);
-
   text-decoration: none;
   color: var(--vt-c-indigo);
   border: 2px solid var(--vt-c-indigo);
