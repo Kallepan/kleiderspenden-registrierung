@@ -104,7 +104,6 @@ function validateForm(e: MouseEvent) {
       Absenden
     </button>
   </form>
-  <Toast />
 </template>
 
 <style scoped lang="less">
