@@ -5,7 +5,7 @@ import { defineStore } from 'pinia';
 export type AddressType = {
   street: string;
   house_number: string; // 1-3 digits with optional letter
-  zip_code: number; // 5 digits
+  zip_code: string; // 5 digits
 };
 
 // This keeps track of the type of clothing that was donated
@@ -47,7 +47,7 @@ export const useDonationStore = defineStore('donation', () => {
   const storeAddress = ref<AddressType>({
     street: 'Musterstrasse',
     house_number: '123',
-    zip_code: 12345,
+    zip_code: '12345',
   });
 
   const currentFormData = ref<FormData>({
@@ -57,7 +57,7 @@ export const useDonationStore = defineStore('donation', () => {
     pickup_adress: {
       street: '',
       house_number: '',
-      zip_code: 0,
+      zip_code: '',
     },
   });
 

@@ -1,14 +1,16 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+import Dropdown from 'primevue/dropdown';
 import { useToast } from 'primevue/usetoast';
-import Toast from 'primevue/toast';
 
 import { useDonationStore } from '@/stores/donation';
-import Dropdown from 'primevue/dropdown';
 
 import UebergabeForm from '@/components/UebergabeForm.vue';
 import AbholungForm from '@/components/AbholungForm.vue';
-const toast = useToast();
 
+const router = useRouter();
+const toast = useToast();
 const donationStore = useDonationStore();
 
 function _validate(e: MouseEvent): { isValid: boolean; message: string } {
@@ -30,13 +32,13 @@ function _validate(e: MouseEvent): { isValid: boolean; message: string } {
   // dropoff validation
   if (donationStore.currentFormData.donation_type === 0) {
     // check if zip code is valid
-    if (donationStore.currentFormData.pickup_adress.zip_code.toString().length !== 5) {
+    if (donationStore.currentFormData.pickup_adress.zip_code.length !== 5) {
       return { isValid: false, message: 'Die PLZ muss mindestens 5 Zeichen haben' };
     }
     // check if the first two digits of the dropoff zip code match the zip code of the store
     if (
-      donationStore.currentFormData.pickup_adress.zip_code.toString().slice(0, 2) !==
-      donationStore.storeAddress.zip_code.toString().slice(0, 2)
+      donationStore.currentFormData.pickup_adress.zip_code.slice(0, 2) !==
+      donationStore.storeAddress.zip_code.slice(0, 2)
     ) {
       return {
         isValid: false,
@@ -68,7 +70,7 @@ function validateForm(e: MouseEvent) {
     life: 3000,
   });
 
-  // TODO: redirect to success page
+  router.push({ name: 'results' });
 }
 </script>
 

@@ -53,7 +53,7 @@ const donationStore = useDonationStore();
         <InputText
           id="zipCode"
           v-model="donationStore.currentFormData.pickup_adress.zip_code"
-          :invalid="donationStore.currentFormData.pickup_adress.zip_code === 0"
+          :invalid="donationStore.currentFormData.pickup_adress.zip_code === ''"
         ></InputText>
       </div>
     </div>
