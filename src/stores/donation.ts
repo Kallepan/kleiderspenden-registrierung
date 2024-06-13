@@ -4,19 +4,19 @@ import { defineStore } from 'pinia';
 // This is used as the address of the store and pickup location
 export type AddressType = {
   street: string;
-  houseNumber: string; // 1-3 digits with optional letter
-  zipCode: number; // 5 digits
+  house_number: string; // 1-3 digits with optional letter
+  zip_code: number; // 5 digits
 };
 
 // This keeps track of the type of clothing that was donated
-const clothingType = [
+const clothingItems = [
   { id: 0, name: 'T-Shirt' },
   { id: 1, name: 'Hose' },
   { id: 2, name: 'Schuhe' },
   { id: 3, name: 'Jacke' },
   { id: 4, name: 'Sonstiges' },
 ];
-type ClothingItemType = (typeof clothingType)[number];
+type ClothingItemType = (typeof clothingItems)[number];
 
 // This keeps track of the crisis area the donation is intended for
 const crisisAreas = [
@@ -35,34 +35,35 @@ const donationTypes = [
   { id: 1, name: 'Übergabe an der Geschäftsstelle' },
 ];
 // This keeps track of where the donation was registered from
-export type FormData =
-  | {
-      donation_type: 0;
-      clothing_type: ClothingItemType;
-      crisis_area: CrisisAreaType;
-      store_adress: AddressType;
-    }
-  | {
-      donation_type: 1;
-      clothing_type: ClothingItemType;
-      crisis_area: CrisisAreaType;
-      store_adress: AddressType;
-      pickup_adress: AddressType;
-    };
+export type FormData = {
+  donation_type: number | null;
+  clothing_item: ClothingItemType | null;
+  crisis_area: CrisisAreaType | null;
+  pickup_adress: AddressType;
+};
 
 // This is the store that keeps track of the donation data
 export const useDonationStore = defineStore('donation', () => {
   const storeAddress = ref<AddressType>({
     street: 'Musterstrasse',
-    houseNumber: '123',
-    zipCode: 12345,
+    house_number: '123',
+    zip_code: 12345,
   });
 
-  const currentFormData = ref<FormData | null>(null);
+  const currentFormData = ref<FormData>({
+    donation_type: null,
+    clothing_item: null,
+    crisis_area: null,
+    pickup_adress: {
+      street: '',
+      house_number: '',
+      zip_code: 0,
+    },
+  });
 
   return {
     storeAddress,
-    clothingType,
+    clothingItems,
     crisisAreas,
     donationTypes,
 
