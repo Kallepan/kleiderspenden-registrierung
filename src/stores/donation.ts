@@ -40,6 +40,8 @@ export type FormData = {
   clothing_item: ClothingItemType | null;
   crisis_area: CrisisAreaType | null;
   pickup_adress: AddressType;
+
+  submittedAt: Date | null;
 };
 
 // This is the store that keeps track of the donation data
@@ -59,7 +61,22 @@ export const useDonationStore = defineStore('donation', () => {
       house_number: '',
       zip_code: '',
     },
+    submittedAt: null,
   });
+
+  function resetFormData() {
+    currentFormData.value = {
+      donation_type: null,
+      clothing_item: null,
+      crisis_area: null,
+      pickup_adress: {
+        street: '',
+        house_number: '',
+        zip_code: '',
+      },
+      submittedAt: null,
+    };
+  }
 
   return {
     storeAddress,
@@ -69,5 +86,7 @@ export const useDonationStore = defineStore('donation', () => {
 
     // keep track of the current form data
     currentFormData,
+
+    resetFormData,
   };
 });

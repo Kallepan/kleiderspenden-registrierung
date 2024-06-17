@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 import Dropdown from 'primevue/dropdown';
@@ -12,6 +13,10 @@ import AbholungForm from '@/components/AbholungForm.vue';
 const router = useRouter();
 const toast = useToast();
 const donationStore = useDonationStore();
+
+onMounted(() => {
+  donationStore.resetFormData();
+});
 
 function _validate(e: MouseEvent): { isValid: boolean; message: string } {
   e.preventDefault();
