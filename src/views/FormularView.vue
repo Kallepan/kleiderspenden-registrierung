@@ -75,6 +75,7 @@ function validateForm(e: MouseEvent) {
     life: 3000,
   });
 
+  donationStore.currentFormData.submittedAt = new Date();
   router.push({ name: 'results' });
 }
 </script>

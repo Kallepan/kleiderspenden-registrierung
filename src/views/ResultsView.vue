@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router';
 
 import { useDonationStore } from '@/stores/donation';
 
+const storeAddress = useDonationStore().storeAddress;
 const results = useDonationStore().currentFormData;
 const router = useRouter();
 
@@ -31,6 +32,7 @@ if (!results.clothing_item || !results.crisis_area) {
         <li><strong>Kleidungsstück:</strong> {{ results.clothing_item!.name }}</li>
         <li><strong>Krisengebiet:</strong> {{ results.crisis_area!.name }}</li>
         <li><strong>Abholung:</strong> {{ results.donation_type === 0 ? 'Ja' : 'Nein' }}</li>
+        <li><strong>Spendenzeitpunkt:</strong> {{ results.submittedAt.toLocaleTimeString() }}</li>
         <span v-if="results.donation_type === 0">
           <li>
             <strong>Straße:</strong> {{ results.pickup_adress.street }}
@@ -40,6 +42,11 @@ if (!results.clothing_item || !results.crisis_area) {
           <li><strong>Postleitzahl:</strong> {{ results.pickup_adress.zip_code }}</li>
         </span>
       </ul>
+      <h3>Standort der Geschätsstelle</h3>
+      <p>
+        Unsere Geschäftsstelle befindet sich in der: {{ storeAddress.street }}
+        {{ storeAddress.house_number }}, {{ storeAddress.zip_code }}
+      </p>
     </template>
   </Card>
 </template>
